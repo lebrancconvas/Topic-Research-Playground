@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Icon from '../assets/icon.png';
 	const addTopic = () => {
 		(document.getElementById('dialog-default') as HTMLInputElement).showModal();
 	}
@@ -13,6 +14,7 @@
 <main>
 	<div>
 		<header>
+			<img src={Icon} type="image/png" alt="Icon" /> 
 			<h1>Topic Research</h1>
 		</header>
 		<section class="addResearch">
@@ -24,8 +26,8 @@
 					<br><br>
 					<input type="text" id="description" placeholder="Input your description" />
 					<br><br>
-					<button on:click={closeDialog}>Cancel</button>
-					<input type="submit" value="Submit" on:click={submitLog}>
+					<button on:click={closeDialog} class="nes-btn is-error">Cancel</button>
+					<button on:click={submitLog} type="submit" class="nes-btn is-success">Submit</button> 
 				</form>
 			</dialog>
 		</section>
@@ -34,5 +36,8 @@
 </main>
 
 <style>
-
+	img {
+		width: 300px;
+		height: 300px;
+	}
 </style>
